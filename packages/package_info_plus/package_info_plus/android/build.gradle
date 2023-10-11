@@ -28,7 +28,9 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 33
 
-    namespace 'dev.fluttercommunity.plus.packageinfo'
+    if (project.android.hasProperty("namespace")) {
+        namespace 'dev.fluttercommunity.plus.packageinfo'
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
